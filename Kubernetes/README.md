@@ -1,6 +1,8 @@
 # Digging into Kubernetes
 
-![Cover](/img/cover.png)
+<p align="center">
+   <img alt="Container vs VM" src="img/cover.png">
+</p>
 
 Often, when it comes to application hosting, the name **Kubernetes** (or **K8s**) is commonly used. But, in reality, what is this framework? How can it help us? Is it good for my specific use case?
 
@@ -28,7 +30,9 @@ How does K8s take advantage of containerization?
 
 Through the **design of a distributed system**, composed of two key components, the **control plane** and **worker nodes**, that together constitute a **cluster**.
 
-![Kubernetes Architecture](/img/Kubernetes%20High%20Level%20Architecture.png)
+<p align="center">
+   <img alt="Kubernetes Architecture" src="img/Kubernetes High Level Architecture.png">
+</p>
 
 ### Control Plane:
 Also known as **Master Node**, or **Cluster Master**, it is reponsible for managing the whole cluster state, by coordinating tasks and monitoring the worker nodes. This is achieved through the usage of some sub-components:
@@ -63,7 +67,9 @@ A master node is in charge of guiding the worker nodes that are machines (virtua
 **Notes:** 
 - The image registry **is not** part of the Kubernetes cluster, it is an external service that stores container images, they are an immutable template that is used to start up (instantiate) containers.
 
-![Kubernetes Cluster & Container Registry](/img/Kubernetes%20&%20Container%20Registry.png)
+<p align="center">
+   <img alt="Kubernetes Cluster & Container Registry" src="img/Kubernetes & Container Registry.png">
+</p>
 
 
 
@@ -76,7 +82,9 @@ Through the usage of
 resources**, which are objects, defined at the API level, that work together with the Master Node Controllers to ensure the desired state of the application.
 They declare how the software should be deployed, managed and scaled. Here are the main types:
 
-![Kubernetes Workload Resources](/img/Kubernetes%20Workload%20Resources.png)
+<p align="center">
+   <img alt="Kubernetes Workload Resources" src="img/Kubernetes Workload Resources.png">
+</p>
 
  - **ReplicaSet**: Its primary purpose is to maintain a stable set of replica Pods with **stateless applications**. If a Pod fails or is terminated, this resource automatically creates a new one, offering the system high availability and reliability (load distribution);
  - **Deployment**: Is a resource with a higher level of abstraction then ReplicaSets, its main feature is rolling updates or rolling them back, enhancing reliability. While a new ReplicaSet Pod is created, an old one is terminated, gradually replacing every old Pod, allowing application updates without downtime, improving availability;
@@ -145,28 +153,17 @@ Kubernetes has revolutionized the way we deploy, manage, and scale applications 
 
 ## Frequent Questions
 
-### Why do companies tend to use Openshift intead of Kubernetes?
+<p align="center">
+    <img alt="Frequent Kubernetes Questions" src="img/frequent questions.jfif" width="200">
+</p>
+
+### Why do companies tend to use Openshift over Kubernetes?
 OpenShift is built on top of Kubernetes but offers additional features and tools, such as enhanced security, developer tools, and management resources.
-### Why use a Network Plugin, for example in a DaemonSet, if the Worker Node already has Kube-Proxy to manage node network?
+### Why use a Network Plugin (in a DaemonSet) if the Worker Node already has Kube-Proxy to manage node network?
 Kube-Proxy manages standard networking tasks, while a network plugin hosted in a DaemonSet (like Calico or Flannel) provides additional features such as network policies.
-### Why use a Cluster Storage, in a DaemonSet instead of ConfigMaps?
+### Why use a Cluster Storage (in a DaemonSet) instead of ConfigMaps?
 Cluster Storage or Persistent Volumes need to persist across Pod restarts and re-deployments and handle high volumes of data, unlike ConfigMaps.
 ### What is the real difference between Kube-Proxy and Services when both manage Pods networking?
 Services provide a stable endpoint and define how Pods are grouped and accessed, while Kube-Proxy implements the network rules and routes traffic to the Pods based on the Service definitions.
-### Does Kubernetes have some king of Graphical User Interface (GUI)?
+### Does Kubernetes have some kind of Graphical User Interface (GUI)?
 Yes, there are several, with the Kubernetes Dashboard being one of the most well-known. This GUI is excellent for cluster management and troubleshooting.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
