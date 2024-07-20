@@ -1,2 +1,2 @@
 # knowledge-sharing
-This repository will share documentation of technologies that I have studied.
+Welcome to the documentation repository! Here, you will find comprehensive documentation on various technologies that I have studied. This repository serves as a centralized resource to share insights, best practices, and detailed guides on these technologies. Whether you're a beginner looking to learn new tools or an experienced developer seeking in-depth information, this repository aims to provide valuable content for all levels of expertise.
